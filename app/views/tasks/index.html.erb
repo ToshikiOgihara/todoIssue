@@ -1,2 +1,18 @@
-<h1>Tasks#index</h1>
-<p>Find me in app/views/tasks/index.html.erb</p>
+<h1>Tasks</h1>
+<div>
+  <h2>新規タスク</h2>
+  <%= form_for @task_item, url: {action: 'create'} do |f| %>
+    <%= f.text_field :title, class: 'form-control' %>
+    <%= f.submit "追加", class: 'btn-block btn-white' %>
+  <% end %>
+  
+  <h3>タスクリスト</h2>
+  <ul>
+    <% @task_items.each do |task_item| %>
+      <li>
+        <%= task_item.title %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
