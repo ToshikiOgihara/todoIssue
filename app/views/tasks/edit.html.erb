@@ -1,0 +1,9 @@
+<div>
+  <h2>タスクの編集</h2>
+  <%= form_for @task_item, url: {action: 'update'} do |f| %>
+    <%= f.text_field :title, class: 'form-control' %>
+    <%= f.submit "保存", class: 'btn-block btn-white' %>
+  <% end %>
+  
+  <%= link_to '一覧に戻る', root_path %>
+</div>

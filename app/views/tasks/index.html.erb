@@ -1,0 +1,20 @@
+<h1>Tasks</h1>
+<div>
+  <h2>新規タスク</h2>
+  <%= form_for @task_item, url: {action: 'create'} do |f| %>
+    <%= f.text_field :title, class: 'form-control' %>
+    <%= f.submit "追加", class: 'btn-block btn-white' %>
+  <% end %>
+  
+  <h3>タスクリスト</h2>
+  <ul>
+    <% @task_items.each do |task_item| %>
+      <li>
+        <%= task_item.title %>
+        <%= link_to "編集", edit_task_path(task_item) %>
+        <%= link_to "削除", task_path(task_item), method: :delete, data: {confirm: '本当に削除していいですか？'} %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
