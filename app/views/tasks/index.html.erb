@@ -11,6 +11,7 @@
     <% @task_items.each do |task_item| %>
       <li>
         <%= task_item.title %>
+        <%= link_to "編集", edit_task_path(task_item) %>
       </li>
     <% end %>
   </ul>
